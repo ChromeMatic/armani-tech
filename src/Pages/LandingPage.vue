@@ -6,7 +6,7 @@
     <!-- Content -->
      <section class="flex flex-col space-y-2">
 
-     <section class="flex justify-between lg:min-h-screen">
+     <section class="flex justify-between h-1/2 lg:min-h-screen">
 
        <div class="w-full img " :style="pic" >
          <div class="flex flex-col justify-center items-center 
@@ -28,7 +28,7 @@
 
       <div class="flex flex-col space-y-4 justify-items-center lg:h-screen">
 
-        <h2 class="text-4xl lg:text-6xl font-light text-center my-8 lg:my-14 uppercase">
+        <h2 class="text-4xl lg:text-6xl mt-16 font-light text-center lg:my-14 uppercase">
             My Skills
         </h2>
         
@@ -354,7 +354,7 @@ export default {
 
 @media only screen and (max-width: 768px) {
   .img{
-    height: 26vh;
+    height: 30vh;
     object-fit: contain;
   }
 }
