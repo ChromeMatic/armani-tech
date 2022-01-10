@@ -10,7 +10,7 @@
 
        <div class="w-full img " :style="pic" >
          <div class="flex flex-col justify-center items-center 
-                    lg:pt-12 pt-40 space-y-2 bg-gray-900 
+                    lg:pt-12 pt-24 space-y-2 bg-gray-900 
                     bg-opacity-75 lg:h-screen h-72">
            <h1 class="lg:text-9xl text-6xl font-light text-white bg-opacity-100">Welcome</h1>
            <p class="font-bold uppercase text-center text-white text-sm lg:text-2xl bg-opacity-100">
