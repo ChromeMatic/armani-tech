@@ -29,34 +29,10 @@
       <div class="flex flex-col space-y-4 justify-items-center lg:h-screen">
 
         <h2 class="text-4xl lg:text-6xl mt-16 font-light text-center lg:my-14 uppercase">
-            My Skills
+            My Skills set
         </h2>
         
         <div class="flex flex-col space-y-12 p-4">
-
-           <div class="flex flex-col lg:flex-row space-x-0 space-y-8 lg:space-y-0 lg:space-x-8">
-               <div v-for="card in cardInfos" :key="card.name">
-
-                <div class="relative flex flex-col rounded-xl">
-                        
-                    <div class="absolute -right-4 rounded-xl -bottom-4 z-10 bg-indigo-900 h-full w-full"></div>
-                          
-                    <div class="flex flex-col z-20 justify-center items-center 
-                    px-4 py-3 bg-gray-800 text-center font-medium uppercase rounded-xl ">
-                       
-                       <div class="bg-indigo-900 h-1 w-20"></div>
-                       <h1>{{card.name}}</h1>
-
-                      <div class="px-3 py-8 ">
-                        <p class="text-sm text-center leading-loose tracking-widest">{{card.content}}</p>
-                      </div>
-
-                    </div>
-
-                </div>
-
-              </div>
-           </div>
 
            <div class="flex flex-col lg:flex-row space-x-0 space-y-8 lg:space-y-0 lg:space-x-6">
               <div v-for="info in backendInfos" :key="info.name" >
@@ -81,6 +57,30 @@
                 </div>
 
               </div>
+
+              </div>
+           </div>
+
+           <div class="flex flex-col lg:flex-row space-x-0 space-y-8 lg:space-y-0 lg:space-x-8">
+               <div v-for="card in cardInfos" :key="card.name">
+
+                <div class="relative flex flex-col rounded-xl">
+                        
+                    <div class="absolute -right-4 rounded-xl -bottom-4 z-10 bg-indigo-900 h-full w-full"></div>
+                          
+                    <div class="flex flex-col z-20 justify-center items-center 
+                    px-4 py-3 bg-gray-800 text-center font-medium uppercase rounded-xl ">
+                       
+                       <div class="bg-indigo-900 h-1 w-20"></div>
+                       <h1>{{card.name}}</h1>
+
+                      <div class="px-3 py-8 ">
+                        <p class="text-sm text-center leading-loose tracking-widest">{{card.content}}</p>
+                      </div>
+
+                    </div>
+
+                </div>
 
               </div>
            </div>
@@ -113,10 +113,6 @@
                                   <th scope="col" class="text-white py-3 px-2 lg:px-4 text-xl font-medium tracking-wider text-left uppercase">
                                       Technologies
                                   </th>
-
-                                  <th scope="col" class="text-white py-3 px-2 lg:px-4 text-xl font-medium tracking-wider text-left uppercase">
-                                      description
-                                  </th>
                                  
                                   <th scope="col" class="relative py-3 px-4 lg:px-6">
                                 <span class="sr-only">View</span>
@@ -126,16 +122,14 @@
                           <tbody>
                               <!-- Product 1 -->
                              <tr v-for="table in Tables" :key="table.Name" class="bg-gray-800 border-b border-indigo-900">
-                                  <td class="py-4 px-2 lg:px-6 text-sm font-medium whitespace-nowrap text-white">
+                                  <td class="py-4 px-2 lg:px-4 text-sm font-medium whitespace-nowrap text-white">
                                       {{table.Name}}
                                   </td>
-                                  <td class="py-4 px-2 lg:px-4 text-sm text-white whitespace-nowrap dark:text-gray-400">
+                                  <td class="py-4 px-2 lg:px-2 text-sm text-white whitespace-nowrap dark:text-gray-400">
                                       {{table.tech}}
                                   </td>
-                                  <td class="py-4 px-2 lg:px-4 text-sm text-white whitespace-nowrap dark:text-gray-400">
-                                      {{table.description}}
-                                  </td>
-                                  <td class="py-4 px-2 lg:px-4 text-sm font-medium text-right whitespace-nowrap">
+                                  
+                                  <td class="py-4 px-2 lg:px-2 text-sm font-medium text-right whitespace-nowrap">
                                     <a :href="table.link" target="_blank" rel="noopener noreferrer" class=" font-semibold uppercase text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">
                                       view
                                     </a>
@@ -165,11 +159,9 @@
 
         <div class="w-full flex text-white justify-center items-center rounded border-indigo-900">
           <p class="text-center lg:text-left lg:text-lg text-sm leading-loose tracking-widest">
-            Hello, my name is Armani Brown. Thank you for visiting my website. I am a student of Northern Caribbean University.
-            My program of study is bachelor of science in computer information systems. I got into coding when I was in High school,
-            where I learned c++. I was fascinated by what I could do with c++, I created a small program traffic ticket program 
-            that could give persons tickets and store them in a file. From then on, I wonder what else I could do. I like to learned 
-            new technologies to build the latest and greatest applications.
+            Hello there, my name is Armani Brown, and I am a student of Northern Caribbean University.
+            My field of study is Computer Information Systems. The reason why I choose this field is, the 
+            opportunity to create any application that I thick of.
           </p>
         </div>
 
@@ -227,7 +219,7 @@
      </section>
 
        <!-- Footer  -->
-      <footerContent/>
+      <footerContent/> 
       <!-- Footer  -->
 
      </section>
@@ -252,18 +244,14 @@ export default {
         content:"Nuxt.js is a framework build for vue.js that offers features that help building a vue application much easier, nuxt.js is similar to next.js for react.",
       },
       {
-        name:"Express.js",
-        content:"I used Express.js to build backend web application framework base on Node.js",
-      },
+        name: "Ruby",
+        content:"Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+      }
     ],
     backendInfos:[
       {
         name:"Spring-Boot (Java)",
         content:"I use Spring boot a java create stand-alone, production-grade Spring based Applications."
-      },
-      {
-        name:"Laravel (PHP)",
-        content:"Laravel is php framework, that I use to create functional web applications."
       },
       {
         name:"PostgresSQL",
