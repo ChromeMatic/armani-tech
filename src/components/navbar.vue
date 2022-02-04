@@ -30,7 +30,7 @@
         <a href="#contactMe" class="text-white ">
                 contact me
         </a>
-        <a href="/Resume_Armani.pdf" target="_blank" rel="noopener noreferrer">
+        <a href="/ResumeV2.pdf" target="_blank" rel="noopener noreferrer">
           resume
         </a>
      </div>

@@ -15,15 +15,7 @@
 
      <h1>Social Media Links</h1>
 
-     <div class="flex space-x-3">
-
-       <a href="https://twitter.com/ArmaniB42195047" target="_blank" rel="noopener noreferrer">
-           <img src="../assets/twitter.png"  alt="">
-       </a>
-
-       <a href="https://www.instagram.com/armanibrwn/" target="_blank" rel="noopener noreferrer">
-         <img src="../assets/instagram.png"  alt="">
-       </a>
+     <div class="flex space-x-4">
 
        <a href="https://github.com/ChromeMatic" target="_blank" rel="noopener noreferrer">
           <img src="../assets/github.png"  alt="">
