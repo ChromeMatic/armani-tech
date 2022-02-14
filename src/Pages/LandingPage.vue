@@ -1,350 +1,90 @@
 <template>
-  <main class="bg-gray-900 ">
+  <main :class="getTheme ? 'dark' : '' ">
+    <div class="dark:text-white dark:bg-gray-900 bg-gray-50">
 
-   <navbar/>
-     
-    <!-- Content -->
-     <section class="flex flex-col space-y-2">
+      <navbar/>
 
-     <section class="flex justify-between h-1/2 lg:min-h-screen">
+      <!-- Landing page section -->
+      <div class="flex lg:py-32 lg:px-10 py-14 p-6 lg:flex-row 
+                  flex-col justify-center items-center lg:space-x-4 
+                  lg:space-y-0 space-x-0 space-y-14">
 
-       <div class="w-full img " :style="pic" >
-         <div class="flex flex-col justify-center items-center 
-                    lg:pt-12 pt-24 space-y-2 bg-gray-900 
-                    bg-opacity-75 lg:h-screen h-72">
-           <h1 class="lg:text-9xl text-6xl font-light text-white bg-opacity-100">Welcome</h1>
-           <p class="font-bold uppercase text-center text-white text-sm lg:text-2xl bg-opacity-100">
-             my name is Armani Brown and i am a full-stack developer.
-          </p>
-         </div>
-       </div>
-       
+        <div class="flex flex-col space-y-4 text-center">
+          <div class="flex flex-col space-y-2">
+            <h1 class="lg:text-5xl text-4xl">Hello, my name is Armani Brown</h1>
+            <h2 class="lg:text-3xl text-2xl">I am a full Web Stack Developer</h2>
+          </div>
 
-     </section>
-      
-      <!-- Skills section -->
-     <section id="skills" class="flex justify-center p-6 pt-8 text-white">
-       
-
-      <div class="flex flex-col space-y-4 justify-items-center lg:h-screen">
-
-        <h2 class="text-4xl lg:text-6xl mt-16 font-light text-center lg:my-14 uppercase">
-            My Skills set
-        </h2>
-        
-        <div class="flex flex-col space-y-12 p-4">
-
-           <div class="flex flex-col lg:flex-row space-x-0 space-y-8 lg:space-y-0 lg:space-x-6">
-              <div v-for="info in backendInfos" :key="info.name" >
-
-              <div class="relative flex flex-col bg-gray-800 rounded-xl">
-
-                <div class="absolute -right-4 rounded-xl -bottom-4 z-10 bg-indigo-900 h-full w-full"></div>
-                
-                <div class="flex flex-col z-20 justify-center items-center 
-                    px-4 py-3 bg-gray-800 text-center font-medium uppercase rounded-xl ">
-
-                   <div class="px-4 py-3 flex flex-col justify-center items-center text-center 
-                   font-medium rounded-t ">
-                     <div class="bg-indigo-900 h-1 w-20"></div>
-                      <h1>{{info.name}}</h1>
-                  </div>
-
-                  <div class="px-3 py-8 rounded-b text-sm text-center  leading-loose tracking-wide">
-                      <p>{{info.content}}</p>
-                  </div>
-                  
-                </div>
-
-              </div>
-
-              </div>
-           </div>
-
-           <div class="flex flex-col lg:flex-row space-x-0 space-y-8 lg:space-y-0 lg:space-x-8">
-               <div v-for="card in cardInfos" :key="card.name">
-
-                <div class="relative flex flex-col rounded-xl">
-                        
-                    <div class="absolute -right-4 rounded-xl -bottom-4 z-10 bg-indigo-900 h-full w-full"></div>
-                          
-                    <div class="flex flex-col z-20 justify-center items-center 
-                    px-4 py-3 bg-gray-800 text-center font-medium uppercase rounded-xl ">
-                       
-                       <div class="bg-indigo-900 h-1 w-20"></div>
-                       <h1>{{card.name}}</h1>
-
-                      <div class="px-3 py-8 ">
-                        <p class="text-sm text-center leading-loose tracking-widest">{{card.content}}</p>
-                      </div>
-
-                    </div>
-
-                </div>
-
-              </div>
-           </div>
-
+          <a href="./Armani Brown.pdf" class="flex justify-center px-8 rounded py-2 uppercase font-semibold bg-green-400 dark:bg-indigo-500 hover:dark:bg-indigo-400 hover:bg-green-500 transition duration-75" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Resume
+          </a>
         </div>
-          
+        
+        <div>
+          <div  v-if="!getTheme">
+            <img class="" src="/undraw_code_thinking_re_gka2.svg" alt="">
+          </div>
+          <div v-else>
+            <img src="/undraw.svg" alt="">
+          </div>
+        </div>
+
       </div>
-        
-     </section>
 
-      <!-- Project section -->
-     <section id="projects" class="flex flex-col lg:h-screen space-y-2 justify-items-center p-6 lg:p-8">
+      <!-- Skills section -->
+      <div id="skills" class="lg:py-20 lg:px-10  py-14 p-6">
 
-       <div class="flex flex-col justify-center items-center text-4xl 
-                  text-white text-center space-y-2 py-12 uppercase font-light">
-         <div class="w-24 h-1 rounded bg-indigo-800"></div>
-         <h1>Projects</h1>
-       </div>
-
-       <div class="flex flex-col">
-          <div class="overflow-x-auto sm:-mx-6 lg:-mx-6">
-              <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
-                  <div class="overflow-hidden shadow-md sm:rounded-lg">
-                      <table class="min-w-full">
-                          <thead class="bg-gray-600 ">
-                              <tr>
-                                  <th scope="col" class="text-white py-3 px-2 lg:px-6 text-xl font-medium tracking-wider text-left uppercase">
-                                      Project
-                                  </th>
-                                  <th scope="col" class="text-white py-3 px-2 lg:px-4 text-xl font-medium tracking-wider text-left uppercase">
-                                      Technologies
-                                  </th>
-                                 
-                                  <th scope="col" class="relative py-3 px-4 lg:px-6">
-                                <span class="sr-only">View</span>
-                            </th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <!-- Product 1 -->
-                             <tr v-for="table in Tables" :key="table.Name" class="bg-gray-800 border-b border-indigo-900">
-                                  <td class="py-4 px-2 lg:px-4 text-sm font-medium whitespace-nowrap text-white">
-                                      {{table.Name}}
-                                  </td>
-                                  <td class="py-4 px-2 lg:px-2 text-sm text-white whitespace-nowrap dark:text-gray-400">
-                                      {{table.tech}}
-                                  </td>
-                                  
-                                  <td class="py-4 px-2 lg:px-2 text-sm font-medium text-right whitespace-nowrap">
-                                    <a :href="table.link" target="_blank" rel="noopener noreferrer" class=" font-semibold uppercase text-blue-600 hover:text-blue-900 dark:text-blue-500 dark:hover:underline">
-                                      view
-                                    </a>
-                                </td>
-                                 
-                              </tr>
-                          </tbody>
-                      </table>
-                  </div>
-              </div>
+       <h1 class="text-5xl capitalize text-center mb-8">
+          My Skills
+       </h1>
+        <div class="grid gap-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-2">
+          <div v-for="skill in Skills" :key="skill.name">
+            <div :class="getTheme ? 'bg-indigo-500' : 'bg-green-500' " class="h-24 flex justify-center text-white font-semibold items-center rounded">
+                {{skill.name}}
+            </div>
           </div>
-       </div>  
-
-     </section>
-      
-      <!-- About Me section -->
-     <section id="aboutMe" class="flex flex-col lg:h-screen px-6">
-
-       <div class="flex flex-col justify-center space-y-2 py-16 items-center text-white uppercase">
-         <div class="w-24 h-1 rounded bg-indigo-800"></div>
-         <h1 class="text-4xl font-light">About Me</h1>
-       </div>
-
-       <section class="flex flex-col justify-center items-center lg:flex-row lg:px-6">
-
-        <img class="h-64 lg:h-96 w-64 lg:w-96" src="../assets/programmer.png" alt="">
-
-        <div class="w-full flex text-white justify-center items-center rounded border-indigo-900">
-          <p class="text-center lg:text-left lg:text-lg text-sm leading-loose tracking-widest">
-            Hello there, my name is Armani Brown, and I am a student of Northern Caribbean University.
-            My field of study is Computer Information Systems. The reason why I choose this field is, the 
-            opportunity to create any application that I thick of.
-          </p>
         </div>
 
-       </section>
+      </div>
+        <!-- Projects section -->
+      <div id="projects" class="lg:py-20 lg:px-10  py-14 p-6"></div>
 
-     </section>
+      <!-- About me section -->
+      <div id="aboutMe" class="lg:py-20 lg:px-10  py-14 p-6"></div>
 
-     <!-- Contact Me section -->
-     <section id="contactMe" class="flex flex-col lg:h-screen px-8 py-2">
-
-        <div class="flex flex-col justify-center space-y-2 py-16 items-center text-white uppercase">
-         <div class="w-24 h-1 rounded bg-indigo-800"></div>
-         <h1 class="text-4xl font-light">Contact Me</h1>
-       </div>
-
-        <div class="flex flex-col lg:flex-row">
-
-          <div class="flex flex-col justify-center items-center flex-1">
-
-            <div class="flex justify-center items-center">
-              <img class="h-96 w-96" src="../assets/undraw_contract_re_ves9.svg" alt="">
-            </div>
-
-          </div>
-
-          <div class="flex-auto">
-            <div>
-              <span class="uppercase text-sm text-white font-bold">Full Name</span>
-              <input class="w-full bg-white text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text" v-model="ContactFrom.name" placeholder="Please enter name....">
-            </div>
-            <div class="lg:mt-6 mt-4">
-              <span class="uppercase text-sm text-white font-bold">Email</span>
-              <input class="w-full bg-white text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="email" v-model="ContactFrom.email" placeholder="Please enter email address">
-            </div>
-            <div class="lg:mt-6 mt-4">
-              <span class="uppercase text-sm text-white font-bold">Message</span>
-              <textarea
-               v-model="ContactFrom.message"
-               class="w-full h-32 bg-white text-gray-900 mt-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
-            </div>
-            <div class="lg:mt-6 mt-4 mb-4 lg:mb-0">
-              <button
-                @click="SubmitEmail"
-                class="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-2 rounded-lg w-full focus:outline-none focus:shadow-outline">
-                Send Message
-              </button>
-            </div>
-          </div>
-           
-
-        </div>
-     
-     </section>
-
-       <!-- Footer  -->
-      <footerContent/> 
-      <!-- Footer  -->
-
-     </section>
-    <!-- End of content -->
+      <footerContent/>
+    </div>
   </main>
 </template>
 
 <script>
 import navbar from "../components/navbar.vue";
 import footerContent from "../components/footer.vue";
+import { mapGetters,mapActions } from "vuex";
 export default {
   name: "LandingPage",
   components:{navbar,footerContent},
   data:()=>({
-    cardInfos:[
-      {
-        name:"Vue.js",
-        content:"Vue.js is a progressive JavaScript framework, that I first learned to used. I have become well verse in using this framework to build my projects lorem",
-      },
-      {
-        name:"Nuxt.js",
-        content:"Nuxt.js is a framework build for vue.js that offers features that help building a vue application much easier, nuxt.js is similar to next.js for react.",
-      },
-      {
-        name: "Ruby",
-        content:"Lorem ipsum dolor sit, amet consectetur adipisicing elit."
-      }
-    ],
-    backendInfos:[
-      {
-        name:"Spring-Boot (Java)",
-        content:"I use Spring boot a java create stand-alone, production-grade Spring based Applications."
-      },
-      {
-        name:"PostgresSQL",
-        content:"Postgres is the open-source relational database that I use when building web base application."
-      },
-      {
-       name:"Docker",
-       content:"Docker is an amazing technology that allows me to ship my application with the environment needed to run."
-      },
-    ],
-    Tables:[
-      {
-       Name:"School Management System (SMS) (Frontend)",
-       tech:"Vue.js, Nuxt.js, Tailwind CSS",
-       description:"The SMS web base application, that will help students and teachers alike in the learning process. This was my final year project.",
-       link:"https://github.com/ChromeMatic/smsFend"
-       },
-       {
-        Name:"School Management System (SMS) (Backend)",
-        tech:"Spring boot (Java), PostgresSQL",
-        description:"This contains the backend code for this project.",
-        link:"https://github.com/ChromeMatic/SMS_backend"
-       },
-      {
-        Name:"True Alpha's Pay Day loan",
-        tech:"Vue.js",
-        description:"This project was done to display my fronted design skills.",
-        link:"https://competent-rosalind-4e3a9d.netlify.app/"
-      },
-      {
-        Name:"BOYD-AUTO (Frontend)",
-        tech:"Vue.js, Nuxt.js",
-        description:"This website allow a user to advertize their automobile for sale, this v contains the user interface.",
-        link:"https://github.com/ChromeMatic/Nuxt_Boyd_Auto"
-      },
-      {
-        Name:"BOYD-AUTO (Backend)",
-        tech:"Express.js, PostgresSQL",
-        description:"This repository contain the code for the backend of this project.",
-        link:"/"
-      },
-      {
-        Name:"CPA (Frontend)",
-        tech:"Vue.js, tailwind css",
-        description:"CPA (crime prevention application) is used to help neighborhood watches to report suspicious activity in their area.",
-        link:"https://github.com/ChromeMatic/Cappa_Remake"
-      },
-      {
-        Name:"CAPA (Backend)",
-        tech:"Laravel, PostgresSQL",
-        description:"This repository contain the code for CPA (crime prevention application) app",
-        link:"/"
-      }
-    ],
-    pic:{backgroundImage:"url(/unsplash.jpg)", objectFit:"cover"},
-    ContactFrom:{
-      name:"",
-      email:"",
-      message:""
-    }
+    Skills:[
+      {name:'Vue.js'},
+      {name:'Nuxt.js'},
+      {name:'Spring Boot'},
+      {name:'Express.js'},
+      {name:'Docker'},
+      {name:'Figma'},
+    ]
   }),
-  computed:{
-    Validation(){
-       let emailV = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-       if(emailV.test(this.ContactFrom.email)){
-         return true;
-       }else{ return false;}
-    }
+ computed:{
+    ...mapGetters(['getTheme']),
   },
   methods:{
-    SubmitEmail(){
-        if(this.Validation){
-
-        }
-    }
+    ...mapActions(['changeTheme'])
   }
 }
 </script>
 
 <style scoped>
-.img{height: 100vh;}
-@media only screen and (max-width: 600px) {
-  .img{
-    height: 35vh;
-    object-fit: contain;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .img{
-    height: 30vh;
-    object-fit: contain;
-  }
-}
-
 </style>
