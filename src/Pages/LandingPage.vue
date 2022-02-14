@@ -42,18 +42,46 @@
        </h1>
         <div class="grid gap-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-2">
           <div v-for="skill in Skills" :key="skill.name">
-            <div :class="getTheme ? 'bg-indigo-500' : 'bg-green-500' " class="h-24 flex justify-center text-white font-semibold items-center rounded">
-                {{skill.name}}
+            <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-700' " class="h-24 space-x-2 flex justify-center text-white font-semibold items-center rounded">
+                <img :src="skill.src" class="h-10 w-10" alt="">
+               <span>
+                  {{skill.name}}
+               </span>
             </div>
           </div>
         </div>
 
       </div>
         <!-- Projects section -->
-      <div id="projects" class="lg:py-20 lg:px-10  py-14 p-6"></div>
+      <div id="projects" class="lg:py-20 lg:px-10  py-14 p-6">
+
+        <h1 class="text-5xl text-gray-800 dark:text-white capitalize text-center">Projects</h1>
+
+        <div class="grid gap-3"></div>
+
+      </div>
 
       <!-- About me section -->
-      <div id="aboutMe" class="lg:py-20 lg:px-10  py-14 p-6"></div>
+      <div id="aboutMe" class="lg:py-20 lg:px-10  py-14 p-6">
+
+       
+
+        <div class="flex lg:flex-row flex-col justify-center items-center lg:space-x-4 lg:space-y-0 space-x-0 space-y-8">
+          
+          <img src="/profile.jpg" class="h-80 w-64 rounded-2xl" alt="">
+
+          <div class="lg:w-1/2 w-full flex flex-col space-y-2">
+           <h1 class="text-4xl text-gray-800 dark:text-white capitalize text-center mb-2">About Me</h1>
+            <p>
+               Hello, comrades. Thank you for visiting my website. I am a student of Northern Caribbean University.
+               
+            </p>
+          </div>
+
+        </div>
+
+
+      </div>
 
       <footerContent/>
     </div>
@@ -69,12 +97,13 @@ export default {
   components:{navbar,footerContent},
   data:()=>({
     Skills:[
-      {name:'Vue.js'},
-      {name:'Nuxt.js'},
-      {name:'Spring Boot'},
-      {name:'Express.js'},
-      {name:'Docker'},
-      {name:'Figma'},
+      {name:'Vue.js',  src:"./vue.svg"},
+      {name:'Nuxt.js', src:"./nuxt-dot-js.svg"},
+      {name:'Spring Boot', src:"./spring.svg"},
+      {name:'Express.js', src:"./node.svg"},
+      {name:'PostgresSQL', src:"./postgresql.svg"},
+      {name:'Docker', src:"./docker.svg"},
+      {name:'Figma', src:"./figma.svg"},
     ]
   }),
  computed:{
