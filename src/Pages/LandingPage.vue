@@ -42,7 +42,7 @@
        </h1>
         <div class="grid gap-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-2">
           <div v-for="skill in Skills" :key="skill.name">
-            <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-700' " class="h-24 space-x-2 flex justify-center text-white font-semibold items-center rounded">
+            <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-600' " class="h-24 space-x-2 flex justify-center text-white font-semibold items-center rounded">
                 <img :src="skill.src" class="h-10 w-10" alt="">
                <span>
                   {{skill.name}}
@@ -52,12 +52,27 @@
         </div>
 
       </div>
+
         <!-- Projects section -->
       <div id="projects" class="lg:py-20 lg:px-10  py-14 p-6">
 
-        <h1 class="text-5xl text-gray-800 dark:text-white capitalize text-center">Projects</h1>
+        <h1 class="text-5xl text-gray-800 mb-8 dark:text-white capitalize text-center">Projects</h1>
 
-        <div class="grid gap-3"></div>
+        <div class="grid gap-2 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-2">
+          <div v-for="project in Projects" :key="project.title">
+              <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-600' " class="xl:h-60 lg:h-56 h-64 flex flex-col justify-center items-center rounded">
+                 <h1 class="xl:text-2xl lg:text-lg text-lg xs:mb-4 text-center text-white">
+                    {{project.title}}
+                 </h1>
+                 <p class="text-sm text-center font-semibold xl:mt-3 lg:mt-4 text-white">
+                    Technologies used: {{project.tech}}
+                 </p>
+                 <a :href="project.link" target="_blank" rel="noopener noreferrer" class="mt-4 bg-green-500 xl:px-24 lg:px-16 px-10 py-2 rounded text-white">
+                   VIEW
+                 </a>
+              </div>
+          </div>
+        </div>
 
       </div>
 
@@ -73,8 +88,11 @@
           <div class="lg:w-1/2 w-full flex flex-col space-y-2">
            <h1 class="text-4xl text-gray-800 dark:text-white capitalize text-center mb-2">About Me</h1>
             <p>
-               Hello, comrades. Thank you for visiting my website. I am a student of Northern Caribbean University.
-               
+               Hello, there. Thank you for visiting my website. I am a student of Northern Caribbean University.
+               I am a upcoming Full-Stack Web Developer. The reason why I  got into coding, is the ability to create something 
+               on my own that will be beneficial to others. In addition to that I like the challenge of solving a problem 
+               faced by others and constantly leaning something new each day. The satisfaction of creating and learning new
+               things everyday. I hope to hear from you shortly.
             </p>
           </div>
 
@@ -104,6 +122,13 @@ export default {
       {name:'PostgresSQL', src:"./postgresql.svg"},
       {name:'Docker', src:"./docker.svg"},
       {name:'Figma', src:"./figma.svg"},
+    ],
+    Projects:[
+      {title:"Entech",link:"https://github.com/ChromeMatic/Entech",tech:"Vue.js, tailwindcss"},
+      {title:"Boyd-Auto",link:"https://github.com/ChromeMatic/Auto-Body",tech:"Vue.js, tailwindcss"},
+      {title:"True Alpha's Loan", link:"https://competent-rosalind-4e3a9d.netlify.app/", tech:"Vue.js, Buetify"},
+      {title:"School Management System front-end",link:"https://github.com/ChromeMatic/smsFend",tech:"Vue.js, Nuxt.js, tailwindcss"},
+      {title:"School Management System back-end",link:"https://github.com/ChromeMatic/SMS_backend",tech:"Spring boot, PostgresSQL"},
     ]
   }),
  computed:{
