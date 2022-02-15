@@ -12,7 +12,7 @@
         <div class="flex flex-col space-y-4 text-center">
           <div class="flex flex-col space-y-2">
             <h1 class="lg:text-5xl text-4xl">Hello, my name is Armani Brown</h1>
-            <h2 class="lg:text-3xl text-2xl">I am a full Web Stack Developer</h2>
+            <h2 class="lg:text-3xl text-2xl">I am a Full-Stack Web Developer</h2>
           </div>
 
           <a href="./Armani Brown.pdf" class="flex justify-center px-8 rounded py-2 uppercase font-semibold bg-green-400 dark:bg-indigo-500 hover:dark:bg-indigo-400 hover:bg-green-500 transition duration-75" target="_blank" rel="noopener noreferrer">
