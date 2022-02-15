@@ -67,7 +67,7 @@
                  <p class="text-sm text-center font-semibold xl:mt-3 lg:mt-4 text-white">
                     Technologies used: {{project.tech}}
                  </p>
-                 <a :href="project.link" target="_blank" rel="noopener noreferrer" class="mt-4 bg-green-500 xl:px-24 lg:px-16 px-10 py-2 rounded text-white">
+                 <a :href="project.link" target="_blank" rel="noopener noreferrer" class="mt-4 font-semibold bg-green-500 xl:px-24 lg:px-16 px-10 py-2 rounded text-white">
                    VIEW
                  </a>
               </div>
