@@ -124,9 +124,9 @@ export default {
       {name:'Figma', src:"./figma.svg"},
     ],
     Projects:[
-      {title:"Entech",link:"https://github.com/ChromeMatic/Entech",tech:"Vue.js, tailwindcss"},
-      {title:"Boyd-Auto",link:"https://github.com/ChromeMatic/Auto-Body",tech:"Vue.js, tailwindcss"},
+      {title:"Entech",link:"https://entech.netlify.app/",tech:"Vue.js, tailwindcss"},
       {title:"True Alpha's Loan", link:"https://competent-rosalind-4e3a9d.netlify.app/", tech:"Vue.js, Buetify"},
+      {title:"Boyd-Auto",link:"https://github.com/ChromeMatic/Auto-Body",tech:"Vue.js, tailwindcss"},
       {title:"School Management System front-end",link:"https://github.com/ChromeMatic/smsFend",tech:"Vue.js, Nuxt.js, tailwindcss"},
       {title:"School Management System back-end",link:"https://github.com/ChromeMatic/SMS_backend",tech:"Spring boot, PostgresSQL"},
     ]
