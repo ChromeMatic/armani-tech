@@ -38,17 +38,11 @@
               <a href="#contactMe" class="dark:text-white hover:text-green-500 transition duration-75">
                       contact me
               </a>
-              <a href="/Armani Brown.pdf" class="dark:text-white hover:text-green-500 transition duration-75" target="_blank" rel="noopener noreferrer">
-              Resume
-              </a>
             </div>
 
             <div v-else class="space-x-4">
                <a href="#contactMe" class="hover:text-indigo-500 transition duration-75">
                   contact me
-              </a>
-              <a href="/Armani Brown.pdf" class="hover:text-indigo-500 transition duration-75" target="_blank" rel="noopener noreferrer">
-                  Resume
               </a>
             </div>
 

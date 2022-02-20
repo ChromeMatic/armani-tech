@@ -12,7 +12,7 @@
         <div class="flex flex-col space-y-4 text-center">
           <div class="flex flex-col space-y-2">
             <h1 class="lg:text-5xl text-4xl">Hello, my name is Armani Brown</h1>
-            <h2 class="lg:text-3xl text-2xl">I am a Full-Stack Web Developer</h2>
+            <h2 class="lg:text-3xl text-2xl">I am an Enthusiastic and hard working Full-Stack Web Developer</h2>
           </div>
 
           <a href="./Armani Brown.pdf" class="flex justify-center px-8 rounded py-2 uppercase font-semibold bg-green-400 dark:bg-indigo-500 hover:dark:bg-indigo-400 hover:bg-green-500 transition duration-75" target="_blank" rel="noopener noreferrer">
@@ -79,25 +79,57 @@
       <!-- About me section -->
       <div id="aboutMe" class="lg:py-20 lg:px-10  py-14 p-6">
 
-       
-
-        <div class="flex lg:flex-row flex-col justify-center items-center lg:space-x-4 lg:space-y-0 space-x-0 space-y-8">
+        <div class="flex lg:flex-row flex-col justify-center items-center lg:space-x-8 lg:space-y-0 space-x-0 space-y-8">
           
           <img src="/profile.jpg" class="h-80 w-64 rounded-2xl" alt="">
 
           <div class="lg:w-1/2 w-full flex flex-col space-y-2">
            <h1 class="text-4xl text-gray-800 dark:text-white capitalize text-center mb-2">About Me</h1>
-            <p>
-               Hello, there. Thank you for visiting my website. I am a student of Northern Caribbean University.
-               I am a upcoming Full-Stack Web Developer. The reason why I  got into coding, is the ability to create something 
-               on my own that will be beneficial to others. In addition to that I like the challenge of solving a problem 
-               faced by others and constantly leaning something new each day. The satisfaction of creating and learning new
-               things everyday. I hope to hear from you shortly.
+            <p class="leading-loose tracking-wide">
+               Hello, there. Thank you for visiting my website.There are three descriptive words that represents me as 
+               an individual: Focused, Disciplined and Driven. As an upcoming Graduand from Northern Caribbean University 
+               I aspire to diversify into coding and use my creative skills to improve data retrieval, and workflow efficiencies.  
+               In addition, I welcome the challenge of problem solving to utilize my innovative skills for complex 
+               proprietary systems.
             </p>
           </div>
 
         </div>
 
+
+      </div>
+
+      <!-- Contact section -->
+      <div id="contactMe" class="lg:py-20 lg:px-10  py-14 p-6">
+
+
+        <div class="flex flex-col justify-center mb-6">
+          <h1 class="text-center lg:text-5xl text-3xl dark:text-white text-gray-800 mb-6">Contact Me</h1>
+
+          <form class="lg:px-24 px-4">
+              <div class="mb-6">
+                <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                  Your email address
+                </label>
+                <input type="email" v-model="contact.email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 
+                  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 
+                  dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 
+                  dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="name@email.com" required>
+              </div>
+
+              <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your Name</label>
+                <input type="text" v-model="contact.name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+              </div>
+
+              <div class="mb-6">
+                <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
+                <textarea rows="4" v-model="contact.message" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Leave a comment..." required></textarea>
+              </div>
+              
+              <button type="submit" @click="sendEmail" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+          </form>
+        </div>
 
       </div>
 
@@ -129,16 +161,19 @@ export default {
       {title:"Boyd-Auto",link:"https://github.com/ChromeMatic/Auto-Body",tech:"Vue.js, tailwindcss"},
       {title:"School Management System front-end",link:"https://github.com/ChromeMatic/smsFend",tech:"Vue.js, Nuxt.js, tailwindcss"},
       {title:"School Management System back-end",link:"https://github.com/ChromeMatic/SMS_backend",tech:"Spring boot, PostgresSQL"},
-    ]
+    ],
+    contact:{
+      name:"",
+      email:"",
+      message:""
+    }
   }),
- computed:{
-    ...mapGetters(['getTheme']),
-  },
+  computed:{...mapGetters(['getTheme']),},
   methods:{
-    ...mapActions(['changeTheme'])
+    ...mapActions(['changeTheme']),
+    sendEmail(){
+
+    }
   }
 }
 </script>
-
-<style scoped>
-</style>
