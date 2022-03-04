@@ -42,7 +42,7 @@
        </h1>
         <div class="grid gap-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-2">
           <div v-for="skill in Skills" :key="skill.name">
-            <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-600' " class="h-24 space-x-2 flex justify-center text-white font-semibold items-center rounded">
+            <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-700' " class="h-24 space-x-2 flex justify-center text-white font-semibold items-center rounded">
                 <img :src="skill.src" class="h-10 w-10" alt="">
                <span>
                   {{skill.name}}
@@ -58,12 +58,15 @@
 
         <h1 class="text-5xl text-gray-800 mb-8 dark:text-white capitalize text-center">Projects</h1>
 
-        <div class="grid gap-2 lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-2">
+        <div class="grid gap-2 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-1 xs:p-2">
           <div v-for="project in Projects" :key="project.title">
-              <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-600' " class="xl:h-60 lg:h-56 h-64 flex flex-col justify-center items-center rounded">
-                 <h1 class="xl:text-2xl lg:text-lg text-lg xs:mb-4 text-center text-white">
+              <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-700' " class="xl:h-60 lg:h-56 h-64 flex flex-col justify-center items-center rounded space-y-2">
+                 <h1 class="xl:text-3xl lg:text-lg text-2xl xs:mb-4 text-center text-white">
                     {{project.title}}
                  </h1>
+                 <p class="text-sm text-center font-semibold xl:mt-3 lg:mt-4 text-white">
+                   {{project.description}}
+                 </p>
                  <p class="text-sm text-center font-semibold xl:mt-3 lg:mt-4 text-white">
                     Technologies used: {{project.tech}}
                  </p>
@@ -154,13 +157,26 @@ export default {
       {name:'PostgresSQL', src:"./postgresql.svg"},
       {name:'Docker', src:"./docker.svg"},
       {name:'Figma', src:"./figma.svg"},
+      {name:'Git',src:"./git.png"}
     ],
     Projects:[
-      {title:"Entech",link:"https://entech.netlify.app/",tech:"Vue.js, tailwindcss"},
-      {title:"True Alpha's Loan", link:"https://competent-rosalind-4e3a9d.netlify.app/", tech:"Vue.js, Buetify"},
-      {title:"Boyd-Auto",link:"https://github.com/ChromeMatic/Auto-Body",tech:"Vue.js, tailwindcss"},
-      {title:"School Management System front-end",link:"https://github.com/ChromeMatic/smsFend",tech:"Vue.js, Nuxt.js, tailwindcss"},
-      {title:"School Management System back-end",link:"https://github.com/ChromeMatic/SMS_backend",tech:"Spring boot, PostgresSQL"},
+      { title:"Entech",
+        link:"https://entech.netlify.app/",
+        tech:"Vue.js, tailwind css",
+        description:"This a small startup create by me and other NCU (northern caribbean university) graduates"
+      },
+      {
+        title:"True Alpha's Loan", 
+        link:"https://competent-rosalind-4e3a9d.netlify.app/", 
+        tech:"Vue.js, Buetify",
+        description:"This is project that offers loan services to individuals who SignUp." 
+       },
+      {
+        title:"CryptoMatic",
+        link:"https://crypto-matic.netlify.app/", 
+        tech:"Vue.js, Tailwind css, Firebase",
+        description:"This is my upcoming project where you can track cryptocurrency and received the latest news about crypto." 
+      },
     ],
     contact:{
       name:"",
