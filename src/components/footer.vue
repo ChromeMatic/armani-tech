@@ -1,5 +1,5 @@
 <template>
-  <main class="flex flex-col h-44 dark:bg-slate-900 bg-white  dark:text-white space-y-2">
+  <main class="flex flex-col h-44 dark:bg-gray-800 bg-white  dark:text-white space-y-2">
 
    <section class="flex justify-center items-center py-2">
      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-0.5 text-violet-600 font-light" fill="none" viewBox="0 0 24 24" stroke="currentColor">

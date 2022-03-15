@@ -12,7 +12,7 @@
         <div class="flex flex-col space-y-4 text-center">
           <div class="flex flex-col space-y-2">
             <h1 class="lg:text-5xl text-4xl">Hello, my name is Armani Brown</h1>
-            <h2 class="lg:text-3xl text-2xl">I am an Enthusiastic and hard working Full-Stack Web Developer</h2>
+            <h2 class="lg:text-3xl text-2xl">I am an Enthusiastic and hard working Web Developer</h2>
           </div>
 
           <a href="./Armani_Brown_Resume_1.pdf" class="flex justify-center px-8 rounded py-2 uppercase font-semibold bg-green-400 dark:bg-indigo-500 hover:dark:bg-indigo-400 hover:bg-green-500 transition duration-75" target="_blank" rel="noopener noreferrer">
@@ -84,8 +84,6 @@
 
         <div class="flex lg:flex-row flex-col justify-center items-center lg:space-x-8 lg:space-y-0 space-x-0 space-y-8">
           
-          <img src="/profile.jpg" class="h-80 w-64 rounded-2xl" alt="">
-
           <div class="lg:w-1/2 w-full flex flex-col space-y-2">
            <h1 class="text-4xl text-gray-800 dark:text-white capitalize text-center mb-2">About Me</h1>
             <p class="leading-loose tracking-wide">
