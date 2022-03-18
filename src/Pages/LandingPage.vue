@@ -15,7 +15,7 @@
             <h2 class="lg:text-3xl text-2xl">I am an Enthusiastic and hard working Web Developer</h2>
           </div>
 
-          <a href="./Armani_Brown_Resume_1.pdf" class="flex justify-center px-8 rounded py-2 uppercase font-semibold bg-green-400 dark:bg-indigo-500 hover:dark:bg-indigo-400 hover:bg-green-500 transition duration-75" target="_blank" rel="noopener noreferrer">
+          <a href="./Armani_Brown_Resume_V2.pdf" class="flex justify-center px-8 rounded py-2 uppercase font-semibold bg-green-400 dark:bg-indigo-500 hover:dark:bg-indigo-400 hover:bg-green-500 transition duration-75" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
@@ -42,7 +42,7 @@
        </h1>
         <div class="grid gap-3 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-2">
           <div v-for="skill in Skills" :key="skill.name">
-            <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-700' " class="h-24 space-x-2 flex justify-center text-white font-semibold items-center rounded">
+            <div :class="getTheme ? 'bg-gray-800' : 'bg-gray-700' " class="h-24 space-x-2 flex justify-center text-white font-semibold items-center rounded">
                 <img :src="skill.src" class="h-10 w-10" alt="">
                <span>
                   {{skill.name}}
@@ -60,7 +60,7 @@
 
         <div class="grid gap-2 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-3 xs:grid-cols-1 xs:p-2">
           <div v-for="project in Projects" :key="project.title">
-              <div :class="getTheme ? 'bg-indigo-500' : 'bg-gray-700' " class="xl:h-60 lg:h-56 h-64 flex flex-col justify-center items-center rounded space-y-2">
+              <div :class="getTheme ? 'bg-gray-800' : 'bg-gray-700' " class="xl:h-72  lg:h-72 h-96 flex flex-col justify-center items-center rounded space-y-2">
                  <h1 class="xl:text-3xl lg:text-lg text-2xl xs:mb-4 text-center text-white">
                     {{project.title}}
                  </h1>
@@ -172,9 +172,21 @@ export default {
       {
         title:"CryptoMatic",
         link:"https://crypto-matic.netlify.app/", 
-        tech:"Vue.js, Tailwind css, Firebase",
+        tech:"Vue.js, Vuex, VueRouter, Tailwind css",
         description:"This is my upcoming project where you can track cryptocurrency and received the latest news about crypto." 
       },
+      {
+        title:"School Management System (Front-end)",
+        link:"https://github.com/ChromeMatic/smsFend",
+        tech:"Nuxt.js Vue.js, Tailwinnd.css and Docker",
+        description:"The general goal of this project is to give students and teachers alike one web application where students can log in to get their assignments and learning resources for their classes and where they can get the live class sessions"
+      },
+      {
+        title:"School Management System (Back-end)",
+        link:"https://github.com/ChromeMatic/SMS_backend",
+        tech:"spring boot, spring jpa, spring security and Docker",
+        description:"the Backend component of the project. In this component the login and authentication along with the business logic"
+      }
     ],
     contact:{
       name:"",
